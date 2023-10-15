@@ -21,3 +21,16 @@ export interface IMeta {
     message: string;
   };
   
+
+  export type IUserProfile = {
+    id: string;
+    fullName: string;
+    email: string;
+    password: string;
+    role: string;
+    contactNo: string;
+    address: string;
+    profileImage: string | undefined;
+    createdAt: string;
+    updatedAt: string;
+  };
