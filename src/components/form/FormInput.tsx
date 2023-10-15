@@ -1,6 +1,5 @@
 "use client";
-
-import { getErrorMessageByPropertyName } from "@/app/utils/schema-validator";
+import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
 import { Controller, useForm, useFormContext } from "react-hook-form";
 
 interface IInput {
