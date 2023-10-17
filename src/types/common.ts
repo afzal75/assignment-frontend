@@ -34,3 +34,13 @@ export interface IMeta {
     createdAt: string;
     updatedAt: string;
   };
+
+  export type IService = {
+    id: string;
+    title: string;
+    description: string;
+    price: number;
+    image: string;
+    createdAt: string;
+    updatedAt: string;
+  };
