@@ -1,8 +1,9 @@
 
-import Cart from '@/components/ui/Cart';
+import AddServiceCart from '@/components/ui/Cart';
 import Header from '@/components/ui/Header';
 import LatestNews from '@/components/ui/LatestNews';
 import Services from '@/components/ui/Services';
+import Upcoming from '@/components/ui/Upcoming';
 import React from 'react';
 
 const HomePage = () => {
@@ -11,7 +12,8 @@ const HomePage = () => {
       <Header></Header>
       <Services></Services>
       <LatestNews></LatestNews>
-      <Cart></Cart>
+      <AddServiceCart></AddServiceCart>
+      <Upcoming></Upcoming>
     </div>
   );
 };
