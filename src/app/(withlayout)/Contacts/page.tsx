@@ -6,7 +6,7 @@ import MapContainer from "@/components/ui/Contact/MapContainer";
 
 import React from "react";
 
-const page = () => {
+const ContactPage = () => {
   return (
     <div>
       <ContactHeader />
@@ -16,4 +16,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;

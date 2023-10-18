@@ -10,6 +10,7 @@ interface IInput {
   label?: string;
   className?: string;
   id: string;
+  readonly?: boolean;
 }
 const FormInput = ({
   name,
@@ -19,6 +20,7 @@ const FormInput = ({
   label,
   className,
   id,
+  readonly
 }: IInput) => {
   const { control, reset, formState: errors } = useFormContext();
 
