@@ -79,7 +79,7 @@ const Navbar = () => {
               </li>
             </Link>
           </>
-        ) : (
+         ) : (
           <></>
         )}
         <Link href={"/faq"}>
