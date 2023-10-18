@@ -1,4 +1,4 @@
-import { IMeta } from "@/types";
+import { IMeta, IUserProfile, PaginationInfo } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
@@ -15,7 +15,7 @@ const userApi = baseApi.injectEndpoints({
           params: arg,
         };
       },
-      transformResponse: (response: any, meta: IMeta) => {
+      transformResponse: (response: any, meta: PaginationInfo) => {
         return {
           admins: response,
           meta,
@@ -33,7 +33,20 @@ const userApi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.user],
     }),
+
+    updateUser: build.mutation({
+      query: (data) => ({
+        url: `${USER_URL}/${data?.id}`,
+        method: "PATCH",
+        data: data.body,
+      }),
+      invalidatesTags: [tagTypes.user],
+    }),
   }),
 });
 
-export const { useGetAllUserQuery, useGetSingleUserQuery } = userApi;
+export const {
+  useGetAllUserQuery,
+  useGetSingleUserQuery,
+  useUpdateUserMutation,
+} = userApi;

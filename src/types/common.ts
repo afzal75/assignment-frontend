@@ -9,6 +9,12 @@ export interface IMeta {
     data: any;
     meta?: IMeta;
   };
+
+  export type PaginationInfo = {
+    total: number;
+    page: number;
+    limit: number;
+  };
   
   export type IGenericErrorResponse = {
     statusCode: number;
