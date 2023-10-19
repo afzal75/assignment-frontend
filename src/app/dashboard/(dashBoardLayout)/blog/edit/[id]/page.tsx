@@ -68,7 +68,7 @@ const page = ({ params }: IProps) => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/dashBoard/blog");
+      router.push("/dashboard/blog");
       setLoading(false);
     }
   };

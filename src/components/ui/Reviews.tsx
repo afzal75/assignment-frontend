@@ -42,11 +42,11 @@ const Reviews = () => {
               <h2 className="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">
                 What Peoples Say
               </h2>
-              <p className="text-base text-body-color">
+              {/* <p className="text-base text-body-color">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. has been the industrys standard dummy text ever since
                 the 1500s.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -97,7 +97,9 @@ const Reviews = () => {
                     </p>
                     <div className="relative text-center">
                       <FaQuoteLeft className="absolute quote top-0 -left-2 w-4 h-4 text-gray-900" />
-                      <p className="inline">{review?.review}</p>
+                      <p className="inline">
+                        {review?.review.slice(0, 100)}...
+                      </p>
                       <FaQuoteRight className="absolute quote bottom-0 right-0 w-4 h-4 text-gray-900" />
                     </div>
 

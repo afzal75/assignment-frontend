@@ -63,7 +63,7 @@ const ServicePage = () => {
         <div className="flex justify-between border-b-2 pb-1">
           <h1 className="text-4xl font-bold">Service List</h1>
           <Link
-            href="/dashBoard/service/create"
+            href="/dashboard/service/create"
             className="btn btn-outline rounded-full  hover:bg-white hover:text-black hover:shadow-lg"
           >
             Add Service
@@ -119,7 +119,7 @@ const ServicePage = () => {
 
                   <td className="flex gap-2">
                     <button className="btn btn-secondary ">
-                      <Link href={`/dashBoard/service/edit/${service?.id}`}>
+                      <Link href={`/dashboard/service/edit/${service?.id}`}>
                         <AiOutlineEdit className="text-3xl" />
                       </Link>
                     </button>

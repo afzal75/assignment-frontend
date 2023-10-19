@@ -53,7 +53,7 @@ const page = () => {
                         progress: undefined,
                         theme: "light",
                     });
-                    router.push("/dashBoard/blog/create");
+                    router.push("/dashboard/blog/create");
                     setLoading(false);
                 }
             }

@@ -1,6 +1,7 @@
 "use client";
 import { ENUM_USER_ROLE } from "@/enum/user";
 import { getUserInfo } from "@/service/auth.service";
+import { Square3Stack3DIcon } from "@heroicons/react/20/solid";
 import {
   HomeIcon,
   QuestionMarkCircleIcon,
@@ -10,7 +11,9 @@ import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaBlogger } from "react-icons/fa";
 import { FcFeedback } from "react-icons/fc";
+import { MdReviews } from "react-icons/md";
 import { RiReservedFill } from "react-icons/ri";
+import dynamic from "next/dynamic";
 
 const Sidebar = () => {
   const { role } = getUserInfo() as any;
@@ -33,7 +36,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/booking"
+                href="/dashboard/booking"
               >
                 <RiReservedFill className="w-5 h-5 inline-block " /> Booking
               </Link>
@@ -53,7 +56,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/service"
+                href="/dashboard/service"
               >
                 <WrenchScrewdriverIcon className="w-5 h-5 inline-block font-semibold" />{" "}
                 Service
@@ -63,7 +66,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/blog"
+                href="/dashboard/blog"
               >
                 <FaBlogger className="w-5 h-5 inline-block " />
                 Blog
@@ -72,7 +75,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/faq"
+                href="/dashboard/faq"
               >
                 <QuestionMarkCircleIcon className="w-5 h-5 inline-block " />
                 FAQ
@@ -81,7 +84,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/feedback"
+                href="/dashboard/feedback"
               >
                 <FcFeedback className="w-5 h-5 inline-block " /> Feedback
               </Link>
@@ -90,7 +93,7 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/user"
+                href="/dashboard/user"
               >
                 <AiOutlineUser className="w-5 h-5 inline-block " /> Add Admin
               </Link>
@@ -98,9 +101,29 @@ const Sidebar = () => {
             <li>
               <Link
                 className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
-                href="/dashBoard/booking"
+                href="/dashboard/booking"
               >
                 <RiReservedFill className="w-5 h-5 inline-block " /> Booking
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
+                href="/dashboard/category"
+              >
+                {" "}
+                <Square3Stack3DIcon className="w-5 h-5 inline-block " />
+                Category
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-white hover:bg-gray-600 hover:rounded-lg my-1"
+                href="/dashboard/review"
+              >
+                {" "}
+                <MdReviews className="w-5 h-5 inline-block " />
+                Review
               </Link>
             </li>
           </>
@@ -110,4 +133,5 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+// export default Sidebar;
+export default dynamic (() => Promise.resolve(Sidebar), {ssr: false})

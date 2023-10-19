@@ -1,4 +1,5 @@
 "use client";
+
 import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
 import { Controller, useForm, useFormContext } from "react-hook-form";
 
@@ -9,7 +10,7 @@ interface IInput {
   placeholder?: string;
   label?: string;
   className?: string;
-  id: string;
+  id?: string;
   readonly?: boolean;
 }
 const FormInput = ({
@@ -20,7 +21,7 @@ const FormInput = ({
   label,
   className,
   id,
-  readonly
+  readonly,
 }: IInput) => {
   const { control, reset, formState: errors } = useFormContext();
 
@@ -45,6 +46,7 @@ const FormInput = ({
             {...field}
             value={value ? value : field.value}
             required
+            readOnly={readonly}
           />
         )}
       />

@@ -21,7 +21,7 @@ const page = () => {
     const res: any = await createFaq(data);
     if (res.data as any) {
       Swal.fire("faq added Successfully!");
-      router.push("/dashBoard/faq");
+      router.push("/dashboard/faq");
       setLoading(false);
     } else {
       toast.error("There was an error!");

@@ -65,7 +65,7 @@ const DashboardServicePage = () => {
       <div className="flex justify-between border-b-2 pb-1">
         <h1 className="text-4xl font-bold">Blogs List</h1>
         <Link
-          href="/dashBoard/blog/create"
+          href="/dashboard/blog/create"
           className="btn btn-outline rounded-full hover:bg-white hover:text-black hover:shadow-lg"
         >
           Add Service
@@ -115,7 +115,7 @@ const DashboardServicePage = () => {
                   <AiOutlineEye className="text-3xl" />
                 </td>
                 <td className="whitespace-nowrap  py-2">
-                  <Link href={`/dashBoard/blog/edit/${service?.id}`}>
+                  <Link href={`/dashboard/blog/edit/${service?.id}`}>
                     <AiOutlineEdit className="text-3xl" />
                   </Link>
                 </td>

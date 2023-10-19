@@ -6,7 +6,7 @@ const Header = () => {
   const bannars = [
     {
       id: 1,
-      title: " Plumbing Service",
+      title: " Car Service",
       subTitle1: "We Provide World Class",
       subTitle2: "House shifting services in Dhaka",
       descripttion:
@@ -15,7 +15,7 @@ const Header = () => {
     },
     {
       id: 2,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       subTitle1: "We Provide World Class",
       subTitle2: "House shifting services in Dhaka",
       descripttion:
@@ -24,7 +24,7 @@ const Header = () => {
     },
     {
       id: 3,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       subTitle1: "We Provide World Class",
       subTitle2: "House shifting services in Dhaka",
       descripttion:

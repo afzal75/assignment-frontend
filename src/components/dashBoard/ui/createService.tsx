@@ -51,7 +51,7 @@ const CreateServices = () => {
             theme: "light",
           });
         }
-        router.push("/dashBoard/service");
+        router.push("/dashboard/service");
         setLoading(false);
       }
     }

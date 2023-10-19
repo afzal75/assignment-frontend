@@ -11,12 +11,19 @@ import Image from "next/image";
 import Loading from "@/app/loading";
 import Swal from "sweetalert2";
 import Link from "next/link";
+import {
+  useDeleteReviewMutation,
+  useGetAllReviewQuery,
+} from "@/redux/api/reviewApi";
+import { StarIcon } from "@heroicons/react/20/solid";
 
-const page = () => {
+const reviewPage = () => {
   const arg = {};
-  const { data, isLoading } = useGetAllFeedBackQuery({ ...arg });
+  const { data, isLoading } = useGetAllReviewQuery({ ...arg });
 
-  const [deleteFeedback] = useDeleteFeedbackMutation();
+  const SERVICE = data?.review;
+
+  const [deleteReview] = useDeleteReviewMutation();
 
   const handleDelete = async (id: string) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -39,16 +46,13 @@ const page = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          deleteFeedback(id);
+          deleteReview(id);
           swalWithBootstrapButtons.fire(
             "Deleted!",
             "Your file has been deleted.",
             "success"
           );
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
             "Your imaginary file is safe :)",
@@ -64,7 +68,7 @@ const page = () => {
   return (
     <div className="pr-20 pl-5 py-10">
       <div className="flex justify-between border-b-2 pb-1">
-        <h1 className="text-4xl font-bold">Feedbacks List</h1>
+        <h1 className="text-4xl font-bold">Reviews List</h1>
       </div>
       <div className="overflow-x-auto mt-10">
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -74,7 +78,7 @@ const page = () => {
                 Image
               </th>
               <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                comments
+                Rating
               </th>
               <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                 suggestions
@@ -85,33 +89,31 @@ const page = () => {
           </thead>
 
           <tbody className="divide-y divide-gray-200">
-            {data?.map((service: any) => (
+            {SERVICE?.map((service: any) => (
               <tr key={service?.id}>
                 <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                   <div className="avatar">
                     <div className="w-8 rounded">
                       <Image
                         alt={service?.title}
-                        src={service?.User?.profileImage}
+                        src={service?.user?.profileImage}
                         width={32}
                         height={32}
                       />
                     </div>
                   </div>
                 </td>
-                <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {service?.comments.slice(0, 50)}...
-                </td>
 
+                <div className="flex">
+                  {Array(service?.rating)
+                    .fill(0)
+                    .map((index, i) => (
+                      <StarIcon key={i} className="w-6 h-6 text-yellow-500" />
+                    ))}
+                </div>
                 <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {service?.suggestions.slice(0, 50)}...
+                  {service?.review.slice(0, 50)}...
                 </td>
-                <button className="whitespace-nowrap py-2 btn btn-primary">
-                  <Link href={`/dashboard/feedback/${service?.id}`}>
-                    <AiOutlineEye className="text-3xl" />
-                  </Link>
-                </button>
-
                 <button className="whitespace-nowrap ml-2 btn py-2 bg-red-500 ">
                   <AiFillDelete
                     onClick={() => handleDelete(service?.id)}
@@ -127,4 +129,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default reviewPage;

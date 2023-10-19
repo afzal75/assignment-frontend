@@ -23,6 +23,7 @@ const page = () => {
   const { role } = getUserInfo() as any;
 
   const handleCancel = (id: string) => {
+    
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",

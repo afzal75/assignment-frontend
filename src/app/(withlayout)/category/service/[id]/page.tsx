@@ -1,72 +1,66 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
-import { useGetAllServicesQuery } from "@/redux/api/serviceApi";
-import { CiSaveUp2 } from "react-icons/ci";
-import Image from "next/image";
-
-import React, { useState } from "react";
-import { BiSolidCartAdd } from "react-icons/bi";
-import { getUserInfo, isLoggedin } from "@/service/auth.service";
-import { useRouter } from "next/navigation";
+import Loading from "@/app/loading";
+import { ENUM_USER_ROLE } from "@/enum/user";
 import { useAddToCartMutation } from "@/redux/api/addToCartApi";
-import Swal from "sweetalert2";
-import { AiOutlineReload } from "react-icons/ai";
-import { useDebounced } from "@/redux/hooks";
+import { useGetServicesByCategoryIdQuery } from "@/redux/api/serviceApi";
+import { getUserInfo, isLoggedin } from "@/service/auth.service";
+import {
+  ClipboardDocumentCheckIcon,
+  ShoppingBagIcon,
+} from "@heroicons/react/20/solid";
+import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { BiSolidCartAdd } from "react-icons/bi";
+import { CiSaveUp2 } from "react-icons/ci";
 import { GrFormNext } from "react-icons/gr";
+import Swal from "sweetalert2";
 
-const Services = () => {
-  const arg: Record<string, any> = {};
+const page = ({ params }: { params: any }) => {
+  const { id } = params;
 
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const debouncedTerm = useDebounced({
-    searchQuery: searchTerm,
-    delay: 600,
-  });
-  const { data, isLoading } = useGetAllServicesQuery({
-    ...arg,
-    searchTerm: debouncedTerm,
-  });
   const { role } = getUserInfo() as any;
-
   const router = useRouter();
-  const userloggedIn = isLoggedin();
+  const isLoggedIn = isLoggedin();
 
+  const { data, isLoading } = useGetServicesByCategoryIdQuery(id);
   const [addToCart] = useAddToCartMutation();
 
   const handleAddToCart = async (id: string) => {
-    if (id) {
-      const res: any = await addToCart({ serviceId: id });
-      if (res.data) {
-        Swal.fire({
-          position: "top-right",
-          icon: "success",
-          title: "Service is Added!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else {
-        Swal.fire({
-          position: "top-right",
-          icon: "error",
-          title: "This service Already Added!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    if (!isLoggedIn) {
+      router.push("/login");
+    } else {
+      if (id) {
+        const res: any = await addToCart({ serviceId: id });
+        if (res.data) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Service is Added!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "This service Already Added!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       }
     }
   };
-
   const handleBook = (id: string) => {
-    if (!userloggedIn) {
+    if (!isLoggedIn) {
       router.push("/login");
     } else {
       router.push(`/booking/${id}`);
     }
-  };
-
-  const reseatFilters = () => {
-    setSearchTerm("");
   };
 
   return (
@@ -87,20 +81,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="m-6 flex justify-center py-5">
-        <input
-          type="text"
-          placeholder="Type here"
-          className="input input-primary w-full max-w-xs"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
 
-        {searchTerm && (
-          <button onClick={reseatFilters} className="btn btn-primary">
-            <AiOutlineReload className=" text-2xl mr-2 " />
-          </button>
-        )}
-      </div>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
         {isLoading ? (
           <>
@@ -159,4 +140,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default page;

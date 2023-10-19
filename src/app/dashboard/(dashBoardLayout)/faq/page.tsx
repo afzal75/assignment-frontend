@@ -65,7 +65,7 @@ const page = () => {
         <div className="flex justify-between border-b-2 pb-1">
           <h1 className="text-4xl font-bold">Faq List</h1>
           <Link
-            href="/dashBoard/faq/create"
+            href="/dashboard/faq/create"
             className="btn btn-outline rounded-full hover:bg-white hover:text-black hover:shadow-lg"
           >
             Add Faq

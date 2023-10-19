@@ -65,7 +65,7 @@ const UpdatedService = ({ params }: IPops) => {
         theme: "light",
       });
     }
-    router.push("/dashBoard/service");
+    router.push("/dashboard/service");
     setLoading(false);
   };
 

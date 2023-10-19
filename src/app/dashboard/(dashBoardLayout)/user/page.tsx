@@ -86,7 +86,7 @@ const UserPage = () => {
         {role === "super_admin" ? (
           <>
             <Link
-              href="/dashBoard/user/create"
+              href="/dashboard/user/create"
               className="btn btn-outline rounded-full  hover:bg-white hover:text-black hover:shadow-lg"
             >
               Add Admin
@@ -142,7 +142,7 @@ const UserPage = () => {
                 </td>
                 <td className="whitespace-nowrap px-4 py-2 items-center flex space-x-2">
                   <Link
-                    href={`/dashBoard/user/${user?.id}`}
+                    href={`/dashboard/user/${user?.id}`}
                     className="btn bg-slate-500 hover:text-black flex items-center justify-center rounded px-4 py-2 text-xs font-medium text-white "
                   >
                     <EyeIcon className="w-5 h-5" />

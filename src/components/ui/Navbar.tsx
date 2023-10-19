@@ -1,24 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import img from "../../assets/home.png";
 import Image from "next/image";
 import { getUserInfo, removeUserInfo } from "@/service/auth.service";
 import { authKey } from "@/constants/storageKey";
 import { useRouter } from "next/navigation";
 import { useProfileQuery } from "@/redux/api/profileApi";
+import { useGetCartsQuery } from "@/redux/api/addToCartApi";
+import Drawer from "@/app/(withlayout)/drawer/page";
 
 const Navbar = () => {
-  // const currentDate = new Date();
-  // const formattedDate = currentDate.toLocaleDateString("en-US", {
-  //   year: "numeric",
-  //   month: "long",
-  //   day: "numeric",
-  // });
   const { userId } = getUserInfo() as any;
   const { data } = useProfileQuery(userId);
-
   const router = useRouter();
 
   const logOut = () => {
@@ -71,39 +66,37 @@ const Navbar = () => {
             <li className="text-black text-xl">Feedback</li>
           </li>
         </Link>
-        {data?.profile?.role === "admin" ? (
-          <>
-            <Link href={"/dashBoard"}>
-              <li>
-                <li className="text-black text-xl">DashBoard</li>
-              </li>
-            </Link>
-          </>
-         ) : (
-          <></>
-        )}
+        <Link href={"/review"}>
+          <li>
+            <li className="text-black text-xl">Review</li>
+          </li>
+        </Link>
+
         <Link href={"/faq"}>
           <li>
             <li className="text-black text-xl">Faq</li>
           </li>
         </Link>
-        {data?.profile?.role === "admin" ? (
-          <>
-            <Link href={"/blog"}>
-              <li>
-                <li className="text-black text-xl">Blog</li>
-              </li>
-            </Link>
-          </>
-        ) : (
-          <></>
-        )}
+
+        <Link href={"/blog"}>
+          <li>
+            <li className="text-black text-xl">Blog</li>
+          </li>
+        </Link>
+
+        <Link href={"/dashboard"}>
+          <li>
+            <li className="text-black text-xl">DashBoard</li>
+          </li>
+        </Link>
       </ul>
     </>
   );
 
   return (
     <div className="sticky top-0 z-50  ">
+      <div>
+      </div>
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -153,7 +146,6 @@ const Navbar = () => {
                   src={data?.profile?.profileImage as string}
                 />
               </div>
-              <p className="m-2">{data?.profile?.fullName as string}</p>
             </div>
             <ul
               tabIndex={0}
@@ -167,6 +159,8 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          <p className="m-2">{data?.profile?.fullName as string}</p>
+          <Drawer />
         </div>
       </div>
     </div>

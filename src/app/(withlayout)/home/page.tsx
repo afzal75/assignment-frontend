@@ -1,21 +1,24 @@
+import AddServiceCart from "@/components/ui/Cart";
+import CategoryPage from "@/components/ui/CategoryPage";
+import Header from "@/components/ui/Header";
+import LatestNews from "@/components/ui/LatestNews";
+import Reviews from "@/components/ui/Reviews";
+import Services from "@/components/ui/Services";
+import Upcoming from "@/components/ui/Upcoming";
+import React from "react";
 
-import AddServiceCart from '@/components/ui/Cart';
-import Header from '@/components/ui/Header';
-import LatestNews from '@/components/ui/LatestNews';
-import Services from '@/components/ui/Services';
-import Upcoming from '@/components/ui/Upcoming';
-import React from 'react';
-
-const HomePage = () => {
+const page = () => {
   return (
     <div>
-      <Header></Header>
-      <Services></Services>
-      <LatestNews></LatestNews>
-      <AddServiceCart></AddServiceCart>
-      <Upcoming></Upcoming>
+      <Header />
+      <CategoryPage />
+      <Services />
+      <Upcoming />
+      <Reviews />
+      <LatestNews />
+      <AddServiceCart />
     </div>
   );
 };
 
-export default HomePage;
+export default page;
