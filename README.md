@@ -1,7 +1,6 @@
 * A Car Servicing Website Built with NextJs, Typesctipt, Tailwind, ANT and RTK Query.
 * Website live link: https://assignment-frontend-xi.vercel.app/
 * Server : https://internet-service-provider-backend.vercel.app
-Project URL – Car Servicing
 * Super Admin Credential : sajeebbhuiyan16@gmail.com Password : 123456
 * Admin Credential: afzalbhuiyan16@gmail.com,
 Password : 123456
