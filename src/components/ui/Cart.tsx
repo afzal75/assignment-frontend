@@ -41,7 +41,7 @@ const AddServiceCart = () => {
             <p className=" text-black py-6">
               A pipe service description typically refers to a description of
               services related to pipes, which are often associated with
-              plumbing or other industrial applications. These services may
+              Car or other industrial applications. These services may
               include maintenance, repair, installation, and more. Here a
               general outline of what a pipe service description might include:
             </p>

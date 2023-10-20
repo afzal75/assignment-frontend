@@ -6,7 +6,7 @@ const Upcoming = () => {
   const UpcomingService = [
     {
       id: 1,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "280",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -14,7 +14,7 @@ const Upcoming = () => {
     },
     {
       id: 2,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "170",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -22,7 +22,7 @@ const Upcoming = () => {
     },
     {
       id: 3,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "346",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -30,7 +30,7 @@ const Upcoming = () => {
     },
     {
       id: 4,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "276",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -38,7 +38,7 @@ const Upcoming = () => {
     },
     {
       id: 5,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "276",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -46,7 +46,7 @@ const Upcoming = () => {
     },
     {
       id: 6,
-      title: "Expert Plumbing Service You Can Trust.",
+      title: "Expert Car Service You Can Trust.",
       price: "276",
       descripttion:
         "Welcome to PACK & SHIFT Removal group, Professional House Shifting Service to anywhere in Bangladesh from Dhaka City. AlsoInternational movers and packers Any country of the world",
@@ -61,7 +61,7 @@ const Upcoming = () => {
           Upcoming Service
         </h1>
         <span className="text-center flex justify-center items-center ">
-          In the fast-paced world of piping and plumbing, staying updated with
+          In the fast-paced world of piping and Car, staying updated with
           the latest advancements and upcoming services is crucial for
           professionals and enthusiasts alike.
         </span>

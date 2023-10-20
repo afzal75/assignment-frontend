@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+* A Car Servicing Website Built with NextJs, Typesctipt, Tailwind, ANT and RTK Query.
+* Website live link: https://assignment-frontend-xi.vercel.app/
+* Server : https://internet-service-provider-backend.vercel.app
+Project URL – Car Servicing
+* Super Admin Credential : sajeebbhuiyan16@gmail.com Password : 123456
+* Admin Credential: afzalbhuiyan16@gmail.com,
+Password : 123456
+* Project Description
+Your web application, the Car Servicing Booking Platform, is a comprehensive solution for users seeking to access the car services. The project is dedicated to simplifying the process of acquiring essential services, such as car service, broadband, Wi-Fi, TV boxes, and more. Key features of the platform include:
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* User Registration:
+Users can register on the platform, providing necessary details such as full name, contact information and email address..
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Service Selection:
+Users can conveniently browse and select from various service packages tailored to meet their specific service needs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Shopping Cart:
+The platform includes a shopping cart feature, allowing users to assemble their desired services before finalizing their bookings.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* Booking Management:
+Users can manage their bookings, making adjustments and updates as necessary, with a smooth and intuitive interface.
 
-## Learn More
+* Authentication and User Profiles:
+The project provides user authentication and profile management, including the ability for users to access and view their registered email address.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Technology Used
+(Front-End:) ==== NextJs, Typescript, TailwindCss, ANT Design, React Hook Form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* (Back-End:) ==== ExpressJs, Prisma
 
-## Deploy on Vercel
+* (State-Management:) ==== RTK Query
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* (Database:) ==== Postgres
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Deployment
+Front-ENd and Backend Deploy into Vercel

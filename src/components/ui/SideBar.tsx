@@ -20,7 +20,7 @@ const Sidebar = () => {
 
   return (
     <div className="w-[250px] rounded min-h-screen bg-base-200 px-3 py-5">
-      <h1 className="text-xl font-bold text-black">Plumbing-Dashboard</h1>
+      <h1 className="text-xl font-bold text-black">Car-Servicing-Dashboard</h1>
       <ul className="menu ">
         {role === ENUM_USER_ROLE.USER ? (
           <>
